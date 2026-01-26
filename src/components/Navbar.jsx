@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-container">
                 <div className="logo">
-                    <img src="/assets/logo/logoPlugin.png" alt="Plugin Agency" style={{ height: '40px', width: 'auto' }} />
+                    <img src="/assets/logo/logoPlugin.png" alt="Plugin Agency" style={{ height: '60px', width: 'auto' }} />
                 </div>
                 <ul className="nav-links">
                     <li><a href="#hero">Inicio</a></li>
