@@ -91,10 +91,15 @@ button {
 .nav-links a {
   font-weight: 500;
   transition: color 0.2s;
+  color: var(--white);
+}
+
+.navbar.scrolled .nav-links a {
+  color: var(--text-color);
 }
 
 .nav-links a:hover {
-  color: var(--bg-color);
+  color: var(--primary-color);
 }
 
 /* Hero */
