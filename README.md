@@ -1,16 +1,74 @@
-# React + Vite
+# Plugin Agency Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Plugin Agency** landing page project. This is a responsive, single-page application built for a digital agency specializing in web development, automation, and blockchain solutions.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Link to Live Demo] (Add your deployment link here if applicable)
 
-## React Compiler
+## 🛠 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Modern Design**: Sleek, responsive interface with a focus on user experience.
+-   **Video Hero**: Dynamic video background for a strong visual impact.
+-   **Team Showcase**: Dedicated section highlighting our expert team members.
+-   **Services Overview**: Clear presentation of agency capabilities.
+-   **Contact Form**: Functional, clean contact form for potential clients.
+-   **Responsive Layout**: Optimized for desktop, tablet, and mobile devices.
 
-## Expanding the ESLint configuration
+## 💻 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   **Frontend Library**: React (v18+)
+-   **Build Tool**: Vite
+-   **Styling**: Vanilla CSS (Variables, Flexbox, Grid)
+-   **Assets**: Local stock video and custom-generated team avatars.
+
+## 📂 Project Structure
+
+```
+plugin-agency/
+├── public/
+│   └── assets/        # Static assets (images, videos)
+├── src/
+│   ├── components/    # Reusable UI components (Hero, About, Contact, etc.)
+│   ├── App.jsx        # Main application layout
+│   ├── main.jsx       # Entry point
+│   └── index.css      # Global styles and variables
+└── index.html
+```
+
+## 🛠️ Getting Started
+
+Follow these steps to set up the project locally:
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/salvador-castro/plugin-agency.git
+    cd plugin-agency
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+    The app will start at `http://localhost:5173`.
+
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
+## 👥 The Team
+
+-   **Maximiliano Perez**: Strategy Lead
+-   **Pablo**: Automation Specialist
+-   **Romina Garbino**: Blockchain Ambassador & VA
+-   **Salva Castro**: Web Developer
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
