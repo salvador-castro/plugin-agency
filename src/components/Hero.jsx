@@ -4,11 +4,6 @@ const Hero = () => {
     return (
         <section id="hero" className="hero">
             <div className="video-background">
-                {/* 
-                  Using a direct link to a free tech abstract video.
-                  Source: Coverr/Pexels style free stock. 
-                  Fallback to a nice gradient if it fails or while loading.
-                */}
                 <video autoPlay loop muted playsInline>
                     <source src="/assets/hero-video.mp4" type="video/mp4" />
                     Tu navegador no soporta videos HTML5.

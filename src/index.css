@@ -399,7 +399,7 @@ button {
 
 .hero p {
   font-size: 1.25rem;
-  color: #4b5563;
+  color: #ffffff;
   margin-bottom: 2.5rem;
 }
 
@@ -429,7 +429,7 @@ button {
 
 .btn-outline {
   border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  color: var(--bg-color);
 }
 
 /* Section Common */
