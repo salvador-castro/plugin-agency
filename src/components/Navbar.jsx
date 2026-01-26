@@ -14,7 +14,9 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-container">
-                <div className="logo">Plugin Agency</div>
+                <div className="logo">
+                    <img src="/assets/logo/logoPlugin.png" alt="Plugin Agency" style={{ height: '40px', width: 'auto' }} />
+                </div>
                 <ul className="nav-links">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Nosotros</a></li>

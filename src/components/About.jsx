@@ -10,7 +10,7 @@ const About = () => {
                 "Team Leadership",
                 "Business Development"
             ],
-            image: "/assets/maximiliano.png"
+            image: "/assets/equipo/maximiliano.png"
         },
         {
             name: "Salva Castro",
@@ -21,7 +21,7 @@ const About = () => {
                 "PHP Solutions",
                 "Full Stack"
             ],
-            image: "/assets/salva.png"
+            image: "/assets/equipo/salva.png"
         },
         {
             name: "Pablo",
@@ -32,7 +32,7 @@ const About = () => {
                 "Process Automation",
                 "Integration Logic"
             ],
-            image: "/assets/pablo.png"
+            image: "/assets/equipo/pablo.png"
         },
         {
             name: "Romina Garbino",
@@ -43,7 +43,7 @@ const About = () => {
                 "Virtual Assistance",
                 "Community Management"
             ],
-            image: "/assets/romina.png"
+            image: "/assets/equipo/romina.png"
         }
     ];
 
