@@ -16,7 +16,7 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  color: var(--text-color);
+  color: var(--white);
   line-height: 1.6;
 }
 
@@ -94,8 +94,7 @@ button {
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
-  /* Removed font-weight change to avoid layout shift and readability issues */
+  color: var(--bg-color);
 }
 
 /* Hero */
