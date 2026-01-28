@@ -10,31 +10,56 @@ Welcome to the **Plugin Agency** landing page project. This is a responsive, sin
 
 -   **Modern Design**: Sleek, responsive interface with a focus on user experience.
 -   **Video Hero**: Dynamic video background for a strong visual impact.
--   **Team Showcase**: Dedicated section highlighting our expert team members.
+-   **Team Showcase**: Dedicated section highlighting our expert team members with custom avatars.
 -   **Services Overview**: Clear presentation of agency capabilities.
 -   **Contact Form**: Functional, clean contact form for potential clients.
--   **Responsive Layout**: Optimized for desktop, tablet, and mobile devices.
+-   **Responsive Layout**: Optimized for desktop, tablet, and mobile devices with hamburger menu.
 
 ## 💻 Tech Stack
 
--   **Frontend Library**: React (v18+)
--   **Build Tool**: Vite
--   **Styling**: Vanilla CSS (Variables, Flexbox, Grid)
--   **Assets**: Local stock video and custom-generated team avatars.
+-   **Frontend Library**: React (v19.2)
+-   **Build Tool**: Vite (v7.2.4)
+-   **Styling**: Vanilla CSS (CSS Variables, Flexbox, Grid)
+-   **Linting**: ESLint (v9.39.1)
+-   **Assets**: Custom video background and team member avatars.
 
 ## 📂 Project Structure
 
 ```
 plugin-agency/
 ├── public/
-│   └── assets/        # Static assets (images, videos)
+│   ├── assets/
+│   │   ├── equipo/       # Team member avatars (4 images)
+│   │   ├── hero/         # Hero section video background
+│   │   └── logo/         # Agency logo
+│   └── vite.svg
 ├── src/
-│   ├── components/    # Reusable UI components (Hero, About, Contact, etc.)
-│   ├── App.jsx        # Main application layout
-│   ├── main.jsx       # Entry point
-│   └── index.css      # Global styles and variables
-└── index.html
+│   ├── components/
+│   │   ├── Navbar.jsx    # Navigation bar with responsive menu
+│   │   ├── Hero.jsx      # Hero section with video background
+│   │   ├── About.jsx     # Team showcase section
+│   │   ├── Services.jsx  # Services overview
+│   │   ├── Contact.jsx   # Contact form
+│   │   └── Footer.jsx    # Footer component
+│   ├── assets/           # Additional source assets
+│   ├── App.jsx           # Main application layout
+│   ├── App.css           # App-specific styles
+│   ├── main.jsx          # Entry point
+│   └── index.css         # Global styles and CSS variables
+├── index.html            # HTML entry point
+├── vite.config.js        # Vite configuration
+├── eslint.config.js      # ESLint configuration
+└── package.json          # Dependencies and scripts
 ```
+
+## 📦 Components
+
+-   **Navbar**: Responsive navigation bar with hamburger menu for mobile devices
+-   **Hero**: Landing section with dynamic video background
+-   **About**: Team showcase featuring all agency members with avatars
+-   **Services**: Overview of agency services and capabilities
+-   **Contact**: Client contact form
+-   **Footer**: Page footer with additional information
 
 ## 🛠️ Getting Started
 
@@ -60,6 +85,11 @@ Follow these steps to set up the project locally:
 4.  **Build for production**
     ```bash
     npm run build
+    ```
+
+5.  **Preview production build**
+    ```bash
+    npm run preview
     ```
 
 ## 👥 The Team

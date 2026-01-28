@@ -24,6 +24,18 @@ const About = () => {
             image: "/assets/equipo/salva.png"
         },
         {
+            name: "Yenifer Núñez",
+            role: "Marketing & Experience",
+            skills: [
+                "Strategy",
+                "Campaigns",
+                "Content",
+                "Events",
+                "Brand experience"
+            ],
+            image: "/assets/equipo/jenifer.png"
+        },
+        {
             name: "Pablo",
             role: "Automation Specialist",
             skills: [
