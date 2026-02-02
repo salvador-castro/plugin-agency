@@ -2,11 +2,26 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { nombre, apellido, email, telefono, message } = req.body;
+        const { nombre, apellido, email, telefono, message, captchaToken } = req.body;
 
         // Validar que los campos necesarios existan
-        if (!nombre || !email || !message) {
-            return res.status(400).json({ error: 'Faltan campos obligatorios' });
+        if (!nombre || !email || !message || !captchaToken) {
+            return res.status(400).json({ error: 'Faltan campos obligatorios o el captcha' });
+        }
+
+        // Verificar Captcha con Google
+        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`;
+
+        try {
+            const captchaRes = await fetch(verifyUrl, { method: 'POST' });
+            const captchaData = await captchaRes.json();
+
+            if (!captchaData.success) {
+                return res.status(400).json({ error: 'Captcha inválido' });
+            }
+        } catch (error) {
+            console.error('Error verificando captcha:', error);
+            return res.status(500).json({ error: 'Error al verificar captcha' });
         }
 
         // Configurar el transportador SMTP (Gmail en este caso)
@@ -21,7 +36,7 @@ export default async function handler(req, res) {
         const mailOptions = {
             from: `"${nombre} ${apellido}" <${process.env.EMAIL_USER}>`, // Remitente (debe ser tu email autenticado)
             replyTo: email, // Para que al responder le llegue al usuario
-            to: ['salvacastro06@gmail.com'], // Destinatario principal
+            to: ['salvacastro06@gmail.com', 'gssalva@gmail.com'], // Destinatarios
             subject: `Nuevo mensaje de contacto de: ${nombre} ${apellido}`,
             text: `
                 Has recibido un nuevo mensaje desde el formulario de contacto:

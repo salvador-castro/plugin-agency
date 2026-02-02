@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const Contact = () => {
 
     const [status, setStatus] = useState(null);
     const [errors, setErrors] = useState({});
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const captchaRef = useRef(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,6 +43,12 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            setStatus({ type: 'error', message: 'Por favor, completa el captcha.' });
+            return;
+        }
+
         setStatus({ type: 'loading', message: 'Enviando...' });
 
         try {
@@ -54,19 +63,23 @@ const Contact = () => {
                     email: formData.email,
                     telefono: formData.telefono,
                     message: formData.cuerpo,
+                    captchaToken
                 }),
             });
 
             if (response.ok) {
                 setStatus({ type: 'success', message: '¡Gracias! Tu mensaje ha sido enviado correctamente.' });
                 setFormData({ nombre: '', apellido: '', email: '', telefono: '', cuerpo: '' });
+                setCaptchaToken(null);
+                captchaRef.current.reset();
                 setTimeout(() => setStatus(null), 5000);
             } else {
-                throw new Error('Error en el servidor');
+                const data = await response.json();
+                throw new Error(data.error || 'Error en el servidor');
             }
         } catch (error) {
             console.error('Error:', error);
-            setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.' });
+            setStatus({ type: 'error', message: error.message || 'Hubo un error al enviar el mensaje.' });
             setTimeout(() => setStatus(null), 5000);
         }
     };
@@ -151,6 +164,14 @@ const Contact = () => {
                                 minLength={10}
                                 maxLength={1000}
                             ></textarea>
+                        </div>
+
+                        <div className="form-field header-btn" style={{ margin: '20px 0' }}>
+                            <ReCAPTCHA
+                                ref={captchaRef}
+                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"} // Clave de prueba por defecto
+                                onChange={setCaptchaToken}
+                            />
                         </div>
 
                         {status && (
