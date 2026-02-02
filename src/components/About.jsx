@@ -15,10 +15,11 @@ const About = () => {
             name: "Salva Castro",
             role: "Web Developer",
             skills: [
-                "React Development",
-                "Python Backend",
-                "PHP Solutions",
-                "Full Stack"
+                "Frontend Architecture",
+                "Backend Development",
+                "System Integrations",
+                "Process Automation",
+                "Product-Oriented Solutions"
             ],
             image: "/assets/equipo/salva.png"
         },
@@ -50,9 +51,10 @@ const About = () => {
             role: "Blockchain Amb. & VA",
             skills: [
                 "Public Relations",
-                "Conflux Ambassador",
-                "Virtual Assistance",
-                "Community Management"
+                "Community Building",
+                "Strategic Communication",
+                "Brand Positioning",
+                "Web3 Ecosystems"
             ],
             image: "/assets/equipo/romina.png"
         }
