@@ -42,12 +42,33 @@ const Contact = () => {
         e.preventDefault();
         setStatus({ type: 'loading', message: 'Enviando...' });
 
-        // Simulating submission
-        setTimeout(() => {
-            setStatus({ type: 'success', message: '¡Gracias! Tu mensaje ha sido enviado correctamente.' });
-            setFormData({ nombre: '', apellido: '', email: '', telefono: '', cuerpo: '' });
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nombre: formData.nombre,
+                    apellido: formData.apellido,
+                    email: formData.email,
+                    telefono: formData.telefono,
+                    message: formData.cuerpo,
+                }),
+            });
+
+            if (response.ok) {
+                setStatus({ type: 'success', message: '¡Gracias! Tu mensaje ha sido enviado correctamente.' });
+                setFormData({ nombre: '', apellido: '', email: '', telefono: '', cuerpo: '' });
+                setTimeout(() => setStatus(null), 5000);
+            } else {
+                throw new Error('Error en el servidor');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.' });
             setTimeout(() => setStatus(null), 5000);
-        }, 1500);
+        }
     };
 
     return (
@@ -138,7 +159,7 @@ const Contact = () => {
                             </div>
                         )}
 
-                        <button type="submit" className="btn btn-primary submit-btn" disabled={status?.type === 'loading'}>
+                        <button type="submit" className="btn btn-primary submit-btn" disabled={status?.type === 'loading' || status?.type === 'success'}>
                             {status?.type === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
                         </button>
                     </form>
