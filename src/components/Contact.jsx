@@ -65,6 +65,8 @@ const Contact = () => {
                                     value={formData.nombre}
                                     onChange={handleChange}
                                     placeholder="Ej: Juan"
+                                    autoComplete="given-name"
+                                    minLength={2}
                                     required
                                 />
                             </div>
@@ -76,6 +78,8 @@ const Contact = () => {
                                     value={formData.apellido}
                                     onChange={handleChange}
                                     placeholder="Ej: Pérez"
+                                    autoComplete="family-name"
+                                    minLength={2}
                                     required
                                 />
                             </div>
@@ -90,8 +94,11 @@ const Contact = () => {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 placeholder="Ej: juan@email.com"
+                                autoComplete="email"
+                                inputMode="email"
                                 required
-                                style={{ borderColor: errors.email ? 'red' : '#ddd' }}
+                                aria-invalid={!!errors.email}
+                                style={{ borderColor: errors.email ? "red" : "#ddd" }}
                             />
                             {errors.email && <span className="error-text">{errors.email}</span>}
                         </div>
@@ -103,7 +110,10 @@ const Contact = () => {
                                 name="telefono"
                                 value={formData.telefono}
                                 onChange={handleChange}
-                                placeholder="Ej: 1112345678"
+                                placeholder="Ej: +54 11 1234 5678"
+                                autoComplete="tel"
+                                inputMode="tel"
+                                pattern="^\+?[0-9][0-9 -]{7,14}$"
                                 required
                             />
                         </div>
@@ -116,7 +126,9 @@ const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Escribe tu consulta aquí..."
                                 required
-                                rows="4"
+                                rows={4}
+                                minLength={10}
+                                maxLength={1000}
                             ></textarea>
                         </div>
 
