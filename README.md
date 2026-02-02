@@ -4,7 +4,7 @@ Welcome to the **Plugin Agency** landing page project. This is a responsive, sin
 
 ## 🚀 Live Demo
 
-[Link to Live Demo] (Add your deployment link here if applicable)
+[https://plugin.uy/](https://plugin.uy/)
 
 ## 🛠 Features
 
