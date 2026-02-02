@@ -508,6 +508,10 @@ button {
   transition: all 0.3s ease;
 }
 
+.hamburger.active span {
+  background-color: var(--text-color);
+}
+
 .navbar.scrolled .hamburger span {
   background-color: var(--text-color);
 }
@@ -532,6 +536,7 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
   /* Hamburger menu visible on mobile */
   .hamburger {
     display: flex;
@@ -666,6 +671,7 @@ html {
 }
 
 @media (max-width: 480px) {
+
   /* Extra small devices */
   .container {
     padding: 0 1rem;
