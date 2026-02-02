@@ -6,6 +6,7 @@ const About = () => {
             name: "Maximiliano Perez",
             role: "Strategy Lead",
             skills: [
+                "Community Builder",
                 "Strategic Planning",
                 "Team Leadership",
                 "Business Development"
@@ -80,7 +81,7 @@ const About = () => {
                                 <p className="member-role">{member.role}</p>
 
                                 <div className="skills-container">
-                                    <h4>Especialidades</h4>
+                                    <h4>Roles</h4>
                                     <ul className="skills-list">
                                         {member.skills.map((skill, i) => (
                                             <li key={i}>
