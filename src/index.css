@@ -471,6 +471,9 @@ button {
 }
 
 .service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
