@@ -169,7 +169,7 @@ const Contact = () => {
                         <div className="form-field header-btn" style={{ margin: '20px 0' }}>
                             <ReCAPTCHA
                                 ref={captchaRef}
-                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"} // Clave de prueba por defecto
+                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                                 onChange={setCaptchaToken}
                             />
                         </div>
