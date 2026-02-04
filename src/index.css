@@ -727,4 +727,110 @@ html {
   .team-card {
     flex: 0 1 calc(50% - 30px);
   }
+
+  .team-card {
+    flex: 0 1 calc(50% - 30px);
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 4rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer-section h4 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #9ca3af;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-description {
+    max-width: 100%;
+  }
+}
+
+/* Enhanced Hero Styles */
+.hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 500;
+  margin-bottom: 1rem !important;
+  color: #e5e7eb !important;
+}
+
+.hero-description {
+  font-size: 1.1rem !important;
+  max-width: 600px;
+  margin: 0 auto 2.5rem !important;
+  color: #d1d5db !important;
+  line-height: 1.6;
 }

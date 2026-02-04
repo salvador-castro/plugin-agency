@@ -3,7 +3,7 @@ const Hero = () => {
         <section id="hero" className="hero">
             <div className="video-background">
                 <video autoPlay loop muted playsInline>
-                    <source src="/assets/hero/hero-video.mp4" type="video/mp4" />
+                    <source src="/assets/hero/hero.mp4" type="video/mp4" />
                     Tu navegador no soporta videos HTML5.
                 </video>
                 <div className="overlay"></div>
