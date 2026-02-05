@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
-import ReCAPTCHA from "react-google-recaptcha";
+import { useState, useRef, lazy, Suspense } from 'react';
+
+const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -167,11 +168,13 @@ const Contact = () => {
                         </div>
 
                         <div className="form-field header-btn" style={{ margin: '20px 0' }}>
-                            <ReCAPTCHA
-                                ref={captchaRef}
-                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                                onChange={setCaptchaToken}
-                            />
+                            <Suspense fallback={<div style={{ height: 78, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f9f9f9', borderRadius: 4 }}>Cargando verificación...</div>}>
+                                <ReCAPTCHA
+                                    ref={captchaRef}
+                                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                                    onChange={setCaptchaToken}
+                                />
+                            </Suspense>
                         </div>
 
                         {status && (

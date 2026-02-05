@@ -57,7 +57,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} ref={menuRef}>
             <div className="container navbar-container">
                 <div className="logo">
-                    <img src="/assets/logo/logoPlugin.png" alt="Plugin Agency" style={{ height: '60px', width: 'auto' }} />
+                    <img src="/assets/logo/logoPlugin.webp" alt="Plugin Agency" style={{ height: '60px', width: 'auto' }} />
                 </div>
 
                 <button

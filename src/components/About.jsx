@@ -47,7 +47,7 @@ const About = () => {
                 "Gestión de Equipos",
                 "Relaciones con Partners"
             ],
-            image: "/assets/equipo/maximiliano.png"
+            image: "/assets/equipo/maximiliano.webp"
         },
         {
             name: "Salvador Castro",
@@ -60,7 +60,7 @@ const About = () => {
                 "Modelado de Datos",
                 "Optimización Técnica"
             ],
-            image: "/assets/equipo/salva.png"
+            image: "/assets/equipo/salva.webp"
         },
         {
             name: "Yenifer Núñez",
@@ -72,7 +72,7 @@ const About = () => {
                 "Planificación de Contenidos",
                 "Estrategia de Marketing"
             ],
-            image: "/assets/equipo/jenifer.png"
+            image: "/assets/equipo/jenifer.webp"
         },
         {
             name: "Pablo González",
@@ -84,7 +84,7 @@ const About = () => {
                 "Procesos Automatizados",
                 "Productividad con IA"
             ],
-            image: "/assets/equipo/pablo.png"
+            image: "/assets/equipo/pablo.webp"
         },
         {
             name: "Romina Garbino",
@@ -97,7 +97,7 @@ const About = () => {
                 "Eventos IRL LATAM",
                 "Ecosistema Web3"
             ],
-            image: "/assets/equipo/romina.png"
+            image: "/assets/equipo/romina.webp"
         }
     ];
 
@@ -122,6 +122,9 @@ const About = () => {
                                                     src={member.image}
                                                     alt={member.name}
                                                     className="member-image"
+                                                    width="193"
+                                                    height="193"
+                                                    loading="lazy"
                                                     onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#ccc' }}
                                                 />
                                             </div>

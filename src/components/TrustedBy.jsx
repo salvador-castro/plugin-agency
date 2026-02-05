@@ -7,53 +7,53 @@ const TrustedBy = () => {
         {
             title: "Blockchain & Web3",
             clients: [
-                { name: "Devconnect", logo: "/assets/empresas/devconnect.png" },
-                { name: "Binance", logo: "/assets/empresas/binance.png" },
-                { name: "Polkadot", logo: "/assets/empresas/polkadot.png" },
-                { name: "Cardano", logo: "/assets/empresas/cardano.png" },
-                { name: "Bitget", logo: "/assets/empresas/bitget.png" },
-                { name: "Blockchain Rio", logo: "/assets/empresas/blockchain-rio.png" },
-                { name: "Blockchain Summit", logo: "/assets/empresas/blockchain-summit.png" },
-                { name: "Scroll Protocol", logo: "/assets/empresas/scroll.png" },
-                { name: "Meta Pool", logo: "/assets/empresas/meta-pool.png" },
-                { name: "Hashrate Space", logo: "/assets/empresas/hashrate-space.png" },
-                { name: "Roderich's Crypto House", logo: "/assets/empresas/roderich.png" },
-                { name: "Nexchange", logo: "/assets/empresas/nexchange.png" },
-                { name: "Criptala", logo: "/assets/empresas/criptala.png" },
-                { name: "R3al Blocks", logo: "/assets/empresas/r3al-blocks.png" },
+                { name: "Devconnect", logo: "/assets/empresas/devconnect.webp" },
+                { name: "Binance", logo: "/assets/empresas/binance.webp" },
+                { name: "Polkadot", logo: "/assets/empresas/polkadot.webp" },
+                { name: "Cardano", logo: "/assets/empresas/cardano.webp" },
+                { name: "Bitget", logo: "/assets/empresas/bitget.webp" },
+                { name: "Blockchain Rio", logo: "/assets/empresas/blockchain-rio.webp" },
+                { name: "Blockchain Summit", logo: "/assets/empresas/blockchain-summit.webp" },
+                { name: "Scroll Protocol", logo: "/assets/empresas/scroll-protocol.webp" },
+                { name: "Meta Pool", logo: "/assets/empresas/meta-pool.webp" },
+                { name: "Hashrate Space", logo: "/assets/empresas/hashrate.webp" },
+                { name: "Roderich's Crypto House", logo: "/assets/empresas/roderich.webp" },
+                { name: "Nexchange", logo: "/assets/empresas/nexchange.webp" },
+                { name: "Criptala", logo: "/assets/empresas/criptala.webp" },
+                { name: "R3al Blocks", logo: "/assets/empresas/r3al-blocks.webp" },
             ]
         },
         {
             title: "Partners Corporativos y Locales",
             clients: [
-                { name: "7AM Tickets", logo: "/assets/empresas/7am-tickets.png" },
-                { name: "Forum Propiedades", logo: "/assets/empresas/forum-propiedades.png" },
-                { name: "Luxury Punta", logo: "/assets/empresas/luxury-punta.png" },
-                { name: "DF Consultores", logo: "/assets/empresas/df-consultores.png" },
-                { name: "Bem Local", logo: "/assets/empresas/bem-local.png" },
-                { name: "Zag Coliving", logo: "/assets/empresas/zag-coliving.png" },
-                { name: "Club del Inversor", logo: "/assets/empresas/club-inversor.png" },
+                { name: "7AM Tickets", logo: "/assets/empresas/7am-tickets.webp" },
+                { name: "Forum Propiedades", logo: "/assets/empresas/forum-propiedades.webp" },
+                { name: "Luxury Punta", logo: "/assets/empresas/luxury-punta.webp" },
+                { name: "DF Consultores", logo: "/assets/empresas/df-consultores.webp" },
+                { name: "Bem Local", logo: "/assets/empresas/bem-local.webp" },
+                { name: "Zag Coliving", logo: "/assets/empresas/zag-coliving.webp" },
+                { name: "Club del Inversor", logo: "/assets/empresas/club-inversor.webp" },
             ]
         },
         {
             title: "Marcas & Activaciones",
             clients: [
-                { name: "Vermut Rooster", logo: "/assets/empresas/vermut-rooster.png" },
-                { name: "Más Colonia", logo: "/assets/empresas/mas-colonia.png" },
-                { name: "Agua Vital Kangen", logo: "/assets/empresas/agua-kangen.png" },
-                { name: "Asadao", logo: "/assets/empresas/asadao.png" },
-                { name: "Urusu", logo: "/assets/empresas/urusu.png" },
-                { name: "Handy", logo: "/assets/empresas/handy.png" },
-                { name: "Viatik", logo: "/assets/empresas/viatik.png" },
-                { name: "We Bike", logo: "/assets/empresas/we-bike.png" },
+                { name: "Vermut Rooster", logo: "/assets/empresas/vermut-rooster.webp" },
+                { name: "Más Colonia", logo: "/assets/empresas/mas-colonia.webp" },
+                { name: "Agua Vital Kangen", logo: "/assets/empresas/agua-kangen.webp" },
+                { name: "Asadao", logo: "/assets/empresas/asadao.webp" },
+                { name: "Urusu", logo: "/assets/empresas/urusu.webp" },
+                { name: "Handy", logo: "/assets/empresas/handy.webp" },
+                { name: "Viatik", logo: "/assets/empresas/viatik.webp" },
+                { name: "We Bike", logo: "/assets/empresas/we-bike.webp" },
             ]
         },
         {
             title: "Venues de Prestigio",
             clients: [
-                { name: "Casa Pueblo", logo: "/assets/empresas/casa-pueblo.png" },
-                { name: "MACA", logo: "/assets/empresas/maca.png" },
-                { name: "Radisson Victoria Plaza", logo: "/assets/empresas/radisson.png" },
+                { name: "Casa Pueblo", logo: "/assets/empresas/casa-pueblo.webp" },
+                { name: "MACA", logo: "/assets/empresas/maca.webp" },
+                { name: "Radisson Victoria Plaza", logo: "/assets/empresas/radisson.webp" },
             ]
         }
     ];
@@ -99,6 +99,9 @@ const TrustedBy = () => {
                                                     src={client.logo}
                                                     alt={client.name}
                                                     className="client-logo"
+                                                    width="186"
+                                                    height="100"
+                                                    loading="lazy"
                                                     onError={(e) => {
                                                         e.target.style.display = 'none';
                                                         e.target.nextElementSibling.style.display = 'flex';
