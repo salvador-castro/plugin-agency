@@ -38,65 +38,64 @@ const About = () => {
 
     const team = [
         {
-            name: "Maximiliano Perez",
-            role: "Strategy Lead",
-            bio: "Maximiliano lidera con una visión estratégica, conectando las necesidades de la comunidad con los objetivos del negocio. Su experiencia en planificación y liderazgo asegura un crecimiento sostenible.",
+            name: "Maximiliano Pérez",
+            role: "Founder & Director",
+            bio: "Maximiliano lidera la visión general de Plugin, el desarrollo del negocio y el armado de equipos. Es responsable de integrar comunidad, productora y agencia en un mismo ecosistema, asegurando coherencia, foco y crecimiento. Su rol abarca la relación con clientes, partners y sponsors, así como la gestión comercial y económica de los proyectos.",
             skills: [
-                "Community Builder",
-                "Strategic Planning",
-                "Team Leadership",
-                "Business Development"
+                "Liderazgo Comercial",
+                "Desarrollo de Negocio",
+                "Gestión de Equipos",
+                "Relaciones con Partners"
             ],
             image: "/assets/equipo/maximiliano.png"
         },
         {
-            name: "Salva Castro",
+            name: "Salvador Castro",
             role: "Web Developer",
-            bio: "Salva permite a las marcas escalar con soluciones técnicas robustas y mantenibles. Se especializa en crear experiencias digitales fluidas desde el frontend hasta el backend.",
+            bio: "Responsable de Desarrollo Web y Arquitectura de Soluciones. Su rol se centra en el diseño, desarrollo e implementación de soluciones digitales robustas, escalables y orientadas a rendimiento. Trabaja en aplicaciones web, sistemas a medida y plataformas digitales, abarcando frontend y backend.",
             skills: [
-                "Frontend Architecture",
-                "Backend Development",
-                "System Integrations",
-                "Process Automation",
-                "Product-Oriented Solutions"
+                "Frontend & Backend",
+                "Arquitectura de Soluciones",
+                "Integración de APIs",
+                "Modelado de Datos",
+                "Optimización Técnica"
             ],
             image: "/assets/equipo/salva.png"
         },
         {
             name: "Yenifer Núñez",
-            role: "Marketing & Experience",
-            bio: "Yenifer crea narrativas convincentes y experiencias de marca memorables. Une a las empresas con sus audiencias a través de campañas creativas.",
+            role: "Marketing, Marca & Experiencia",
+            bio: "Yenifer es responsable de Marketing, Marca y Experiencia. Su rol se enfoca en la construcción y gestión integral de la marca, asegurando coherencia estratégica, claridad en la comunicación y orden en los procesos vinculados a marketing y contenidos. Conecta visión estratégica con ejecución concreta.",
             skills: [
-                "Strategy",
-                "Campaigns",
-                "Content",
-                "Events",
-                "Brand experience"
+                "Lineamientos de Marca",
+                "Procesos de Comunicación",
+                "Planificación de Contenidos",
+                "Estrategia de Marketing"
             ],
             image: "/assets/equipo/jenifer.png"
         },
         {
-            name: "Pablo",
-            role: "Automation Specialist",
-            bio: "Pablo optimiza flujos de trabajo, ahorrando tiempo y reduciendo errores. Sus soluciones de automatización agilizan procesos complejos, permitiendo a los equipos enfocarse en lo importante.",
+            name: "Pablo González",
+            role: "Founder & CEO of kude.agency",
+            bio: "Pablo aporta a Plugin sus conocimientos sobre automatización y flujos de trabajo automatizados para liberar al equipo de tareas repetitivas. Su trabajo asistido por IA permite aumentar la productividad del grupo, automatizando procesos internos y de cara al público, como la creación de contenido para redes sociales.",
             skills: [
-                "n8n Workflows",
-                "Low Code Platforms",
-                "Process Automation",
-                "Integration Logic"
+                "Automation Workflows",
+                "AI Enthusiast",
+                "Procesos Automatizados",
+                "Productividad con IA"
             ],
             image: "/assets/equipo/pablo.png"
         },
         {
             name: "Romina Garbino",
-            role: "Blockchain Amb. & VA",
-            bio: "Romina conecta en el espacio Web3, construyendo comunidades y gestionando comunicaciones estratégicas para posicionar marcas efectivamente en el ecosistema blockchain.",
+            role: "Relaciones Públicas & Alianzas",
+            bio: "Romina 'Mimi' Garbino es responsable de Relaciones Públicas, Alianzas Estratégicas y Comunicación. Su trabajo se centra en potenciar la visibilidad de la agencia y clientes en LinkedIn y X, ampliando alcance y posicionamiento en el ecosistema tech y Web3. Construye colaboraciones estratégicas y acompaña la presencia en eventos IRL en LATAM.",
             skills: [
-                "Public Relations",
-                "Community Building",
-                "Strategic Communication",
-                "Brand Positioning",
-                "Web3 Ecosystems"
+                "Relaciones Públicas",
+                "Alianzas Estratégicas",
+                "Comunicación",
+                "Eventos IRL LATAM",
+                "Ecosistema Web3"
             ],
             image: "/assets/equipo/romina.png"
         }
