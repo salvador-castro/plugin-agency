@@ -1,9 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useMemo } from 'react';
 
 const TrustedBy = () => {
-    const scrollerRefs = useRef([]);
-
-    const clientCategories = [
+    const clientCategories = useMemo(() => [
         {
             title: "Blockchain & Web3",
             clients: [
@@ -56,21 +54,21 @@ const TrustedBy = () => {
                 { name: "Radisson Victoria Plaza", logo: "/assets/empresas/radisson.webp" },
             ]
         }
-    ];
+    ], []);
 
-    useEffect(() => {
-        // Clone logos for seamless infinite scroll
-        scrollerRefs.current.forEach((scroller) => {
-            if (!scroller || scroller.dataset.cloned === 'true') return;
-
-            const scrollerContent = Array.from(scroller.children);
-            scrollerContent.forEach((item) => {
-                const clone = item.cloneNode(true);
-                scroller.appendChild(clone);
-            });
-            scroller.dataset.cloned = 'true';
-        });
-    }, []);
+    // Render a single logo card
+    const LogoCard = ({ client, keyPrefix }) => (
+        <div className="carousel-logo-card">
+            <img
+                src={client.logo}
+                alt={client.name}
+                className="client-logo"
+                width="186"
+                height="100"
+                loading="lazy"
+            />
+        </div>
+    );
 
     return (
         <section className="trusted-by-section">
@@ -89,28 +87,25 @@ const TrustedBy = () => {
 
                             <div className="carousel-row">
                                 <div className="carousel-wrapper">
-                                    <div
-                                        className="carousel-scroller"
-                                        ref={(el) => scrollerRefs.current[categoryIndex] = el}
-                                    >
+                                    {/* 
+                                        Pure CSS infinite scroll - we render the items twice 
+                                        in React instead of cloning via DOM manipulation.
+                                        This eliminates the forced reflow from useEffect.
+                                    */}
+                                    <div className="carousel-scroller">
+                                        {/* First set of logos */}
                                         {category.clients.map((client, index) => (
-                                            <div key={index} className="carousel-logo-card">
-                                                <img
-                                                    src={client.logo}
-                                                    alt={client.name}
-                                                    className="client-logo"
-                                                    width="186"
-                                                    height="100"
-                                                    loading="lazy"
-                                                    onError={(e) => {
-                                                        e.target.style.display = 'none';
-                                                        e.target.nextElementSibling.style.display = 'flex';
-                                                    }}
-                                                />
-                                                <div className="logo-placeholder" style={{ display: 'none' }}>
-                                                    <span>{client.name}</span>
-                                                </div>
-                                            </div>
+                                            <LogoCard
+                                                key={`first-${index}`}
+                                                client={client}
+                                            />
+                                        ))}
+                                        {/* Second set (duplicate for seamless loop) */}
+                                        {category.clients.map((client, index) => (
+                                            <LogoCard
+                                                key={`second-${index}`}
+                                                client={client}
+                                            />
                                         ))}
                                     </div>
                                 </div>

@@ -22,8 +22,8 @@ const OUTPUT_DIR = join(__dirname, '../public/assets-optimized');
 // Configuration for different image types
 const CONFIG = {
     equipo: {
-        maxWidth: 400,
-        maxHeight: 530,
+        maxWidth: 200,
+        maxHeight: 265,
         quality: 85
     },
     empresas: {
