@@ -9,12 +9,14 @@ const Hero = () => {
                 <div className="overlay"></div>
             </div>
             <div className="container hero-content">
-                <h1>Transformamos ideas en <span className="gradient-text">experiencias digitales</span></h1>
-                <p className="hero-subtitle">Agencia de desarrollo web y diseño UI/UX enfocada en resultados.</p>
-                <p className="hero-description">Creamos sitios web modernos, tiendas online y aplicaciones que conectan tu marca con tus clientes. Especialistas en React, Node.js y tecnologías de vanguardia.</p>
+                <h1>Agencia digital en Uruguay para ordenar <span className="gradient-text">marca, contenido y tecnología</span></h1>
+                <p className="hero-subtitle">Convertimos proyectos digitales en un sistema: branding, comunicación, contenidos, web y automatización trabajando en conjunto para ganar claridad, coherencia y visibilidad.</p>
+
+
+
                 <div className="hero-buttons">
-                    <a href="#contact" className="btn btn-primary">Empezar Proyecto</a>
-                    <a href="#services" className="btn btn-outline">Ver Servicios</a>
+                    <a href="#contact" className="btn btn-primary">Coordinar una llamada</a>
+                    <a href="#method" className="btn btn-outline">Ver cómo trabajamos</a>
                 </div>
             </div>
         </section>

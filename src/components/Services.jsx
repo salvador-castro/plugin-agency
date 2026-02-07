@@ -1,23 +1,28 @@
 const services = [
     {
-        title: "Desarrollo Web",
-        description: "Sitios web rápidos, seguros y escalables utilizando las últimas tecnologías.",
+        title: "Estrategia, Marca y Comunicación",
+        description: "Ordenamos identidad, propuesta de valor y narrativa para que cada punto de contacto diga lo mismo: claro, consistente y con intención.",
+        icon: "🎯"
+    },
+    {
+        title: "Contenidos y Redes Sociales",
+        description: "Diseñamos una estrategia de contenidos que represente al proyecto y lo vuelva encontrable.",
+        icon: "📱"
+    },
+    {
+        title: "Diseño Web y Soluciones Digitales",
+        description: "Diseñamos y desarrollamos sitios web y landings orientadas a conversión, alineadas a la marca y al objetivo del negocio.",
         icon: "💻"
     },
     {
-        title: "Diseño UI/UX",
-        description: "Interfaces intuitivas y atractivas que enamoran a tus usuarios.",
-        icon: "🎨"
+        title: "Automatización, Procesos e IA aplicada",
+        description: "Implementamos flujos para ahorrar tiempo, estandarizar y escalar operaciones y contenido.",
+        icon: "🤖"
     },
     {
-        title: "E-commerce",
-        description: "Tiendas online optimizadas para convertir visitantes en clientes.",
-        icon: "🛒"
-    },
-    {
-        title: "SEO & Marketing",
-        description: "Posicionamiento orgánico y estrategias para aumentar tu visibilidad.",
-        icon: "📈"
+        title: "PR, Experiencias y Ecosistema",
+        description: "Creamos activaciones y conexiones que aumentan visibilidad real dentro del ecosistema creativo y tecnológico.",
+        icon: "🤝"
     }
 ];
 

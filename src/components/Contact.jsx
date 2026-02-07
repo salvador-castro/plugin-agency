@@ -88,105 +88,121 @@ const Contact = () => {
     return (
         <section id="contact" className="section contact-section">
             <div className="container">
-                <h2 className="section-title">Contáctanos</h2>
-                <div className="contact-wrapper">
-                    <form onSubmit={handleSubmit} className="contact-form-grid">
-                        <div className="form-row">
+                <h2 className="section-title">Contacto</h2>
+                <div className="contact-wrapper two-column-layout">
+
+                    <div className="contact-info-column">
+                        <h3 className="contact-subtitle">Hablemos de tu proyecto</h3>
+                        <p className="contact-intro">
+                            Si tu proyecto necesita estructura, claridad y un sistema conectado, coordinemos una conversación.
+                        </p>
+
+                        <div className="calendly-container">
+                            <iframe
+                                src="https://calendly.com/plugin-agency/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                title="Agendar llamada con Plugin"
+                            ></iframe>
+                        </div>
+
+                        <div className="contact-details-mini">
+                            <p>Montevideo, Uruguay</p>
+                            <p>hola@plugin.uy</p>
+                        </div>
+                    </div>
+
+                    <div className="contact-form-column">
+                        <div className="form-header">
+                            <h3>O escribinos por acá</h3>
+                        </div>
+
+                        <form onSubmit={handleSubmit} className="contact-form-grid">
+                            <div className="form-row">
+                                <div className="form-field">
+                                    <label>Nombre</label>
+                                    <input
+                                        type="text"
+                                        name="nombre"
+                                        value={formData.nombre}
+                                        onChange={handleChange}
+                                        placeholder="Tu nombre"
+                                        required
+                                    />
+                                </div>
+                                <div className="form-field">
+                                    <label>Apellido</label>
+                                    <input
+                                        type="text"
+                                        name="apellido"
+                                        value={formData.apellido}
+                                        onChange={handleChange}
+                                        placeholder="Tu apellido"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
                             <div className="form-field">
-                                <label>Nombre</label>
+                                <label>Email</label>
                                 <input
-                                    type="text"
-                                    name="nombre"
-                                    value={formData.nombre}
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
                                     onChange={handleChange}
-                                    placeholder="Ej: Juan"
-                                    autoComplete="given-name"
-                                    minLength={2}
+                                    onBlur={handleBlur}
+                                    placeholder="tu@email.com"
                                     required
+                                    style={{ borderColor: errors.email ? "red" : "#ddd" }}
                                 />
+                                {errors.email && <span className="error-text">{errors.email}</span>}
                             </div>
+
                             <div className="form-field">
-                                <label>Apellido</label>
+                                <label>Teléfono (Op.)</label>
                                 <input
-                                    type="text"
-                                    name="apellido"
-                                    value={formData.apellido}
+                                    type="tel"
+                                    name="telefono"
+                                    value={formData.telefono}
                                     onChange={handleChange}
-                                    placeholder="Ej: Pérez"
-                                    autoComplete="family-name"
-                                    minLength={2}
+                                    placeholder="+598 ..."
+                                />
+                            </div>
+
+                            <div className="form-field">
+                                <label>Mensaje</label>
+                                <textarea
+                                    name="cuerpo"
+                                    value={formData.cuerpo}
+                                    onChange={handleChange}
+                                    placeholder="Contanos brevemente sobre tu proyecto..."
                                     required
-                                />
+                                    rows={4}
+                                ></textarea>
                             </div>
-                        </div>
 
-                        <div className="form-field">
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                placeholder="Ej: juan@email.com"
-                                autoComplete="email"
-                                inputMode="email"
-                                required
-                                aria-invalid={!!errors.email}
-                                style={{ borderColor: errors.email ? "red" : "#ddd" }}
-                            />
-                            {errors.email && <span className="error-text">{errors.email}</span>}
-                        </div>
-
-                        <div className="form-field">
-                            <label>Teléfono</label>
-                            <input
-                                type="tel"
-                                name="telefono"
-                                value={formData.telefono}
-                                onChange={handleChange}
-                                placeholder="Ej: +54 11 1234 5678"
-                                autoComplete="tel"
-                                inputMode="tel"
-                                pattern="^\+?[0-9][0-9 -]{7,14}$"
-                                required
-                            />
-                        </div>
-
-                        <div className="form-field">
-                            <label>Mensaje</label>
-                            <textarea
-                                name="cuerpo"
-                                value={formData.cuerpo}
-                                onChange={handleChange}
-                                placeholder="Escribe tu consulta aquí..."
-                                required
-                                rows={4}
-                                minLength={10}
-                                maxLength={1000}
-                            ></textarea>
-                        </div>
-
-                        <div className="form-field header-btn" style={{ margin: '20px 0' }}>
-                            <Suspense fallback={<div style={{ height: 78, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f9f9f9', borderRadius: 4 }}>Cargando verificación...</div>}>
-                                <ReCAPTCHA
-                                    ref={captchaRef}
-                                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                                    onChange={setCaptchaToken}
-                                />
-                            </Suspense>
-                        </div>
-
-                        {status && (
-                            <div className={`status-message ${status.type}`}>
-                                {status.message}
+                            <div className="form-field header-btn" style={{ margin: '15px 0' }}>
+                                <Suspense fallback={<div>Cargando...</div>}>
+                                    <ReCAPTCHA
+                                        ref={captchaRef}
+                                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                                        onChange={setCaptchaToken}
+                                    />
+                                </Suspense>
                             </div>
-                        )}
 
-                        <button type="submit" className="btn btn-primary submit-btn" disabled={status?.type === 'loading' || status?.type === 'success'}>
-                            {status?.type === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
-                        </button>
-                    </form>
+                            {status && (
+                                <div className={`status-message ${status.type}`}>
+                                    {status.message}
+                                </div>
+                            )}
+
+                            <button type="submit" className="btn btn-primary submit-btn" disabled={status?.type === 'loading' || status?.type === 'success'}>
+                                {status?.type === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>

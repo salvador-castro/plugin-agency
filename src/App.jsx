@@ -1,8 +1,12 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
+import Problem from './components/Problem';
+import Method from './components/Method';
 import Services from './components/Services';
-import TrustedBy from './components/TrustedBy';
+import WorkPacks from './components/WorkPacks';
+import About from './components/About';
+import Process from './components/Process';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -12,9 +16,13 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
-      <About />
+      <Problem />
+      <Method />
       <Services />
-      <TrustedBy />
+      <WorkPacks />
+      <About />
+      <Process />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
