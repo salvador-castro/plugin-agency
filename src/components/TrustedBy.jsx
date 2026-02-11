@@ -57,7 +57,7 @@ const TrustedBy = () => {
     ], []);
 
     // Render a single logo card
-    const LogoCard = ({ client, keyPrefix }) => (
+    const LogoCard = ({ client }) => (
         <div className="carousel-logo-card">
             <img
                 src={client.logo}

@@ -122,7 +122,6 @@ async function main() {
     await ensureDir(OUTPUT_DIR);
     
     const subdirs = ['equipo', 'empresas', 'logo', 'hero'];
-    let totalSaved = 0;
     let totalProcessed = 0;
     
     for (const subdir of subdirs) {
