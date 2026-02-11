@@ -1,4 +1,4 @@
-import { useState, useRef, lazy, Suspense } from 'react';
+import { useState, useRef, lazy, Suspense, useEffect } from 'react';
 
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
 
@@ -85,6 +85,35 @@ const Contact = () => {
         }
     };
 
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.href = "https://assets.calendly.com/assets/external/widget.css";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+
+        const script = document.createElement('script');
+        script.src = "https://assets.calendly.com/assets/external/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            if (document.body.contains(script)) {
+                document.body.removeChild(script);
+            }
+            if (document.head.contains(link)) {
+                document.head.removeChild(link);
+            }
+        }
+    }, []);
+
+    const openCalendly = () => {
+        if (window.Calendly) {
+            window.Calendly.initPopupWidget({
+                url: 'https://calendly.com/ceitutnfrba/plugin-test?hide_event_type_details=1&hide_gdpr_banner=1'
+            });
+        }
+    };
+
     return (
         <section id="contact" className="section contact-section">
             <div className="container">
@@ -97,19 +126,47 @@ const Contact = () => {
                             Si tu proyecto necesita estructura, claridad y un sistema conectado, coordinemos una conversación.
                         </p>
 
-                        <div className="calendly-container">
-                            <iframe
-                                src="https://calendly.com/plugin-agency/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                title="Agendar llamada con Plugin"
-                            ></iframe>
+                        <div style={{ marginTop: '20px' }}>
+                            <button
+                                onClick={openCalendly}
+                                className="btn btn-outline-white"
+                                style={{ width: '100%', maxWidth: '300px' }}
+                            >
+                                Agenda una llamada de 30 min
+                            </button>
+                        </div>
+
+                        <div className="value-props" style={{ marginTop: '30px', color: 'rgba(255,255,255,0.9)' }}>
+                            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <span style={{ color: '#4ade80', fontSize: '1.2rem' }}>✓</span> Visión integral del negocio
+                                </li>
+                                <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <span style={{ color: '#4ade80', fontSize: '1.2rem' }}>✓</span> Tecnología + Estrategia
+                                </li>
+                                <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <span style={{ color: '#4ade80', fontSize: '1.2rem' }}>✓</span> Plan de acción concreto
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="founders-avatars" style={{ marginTop: '30px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            <div style={{ display: 'flex' }}>
+                                <img src="/assets/equipo/maximiliano.webp" alt="Maxi" style={{ width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover', border: '2px solid white' }} />
+                                <img src="/assets/equipo/salva.webp" alt="Salva" style={{ width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover', border: '2px solid white', marginLeft: '-15px' }} />
+                                <img src="/assets/equipo/romina.webp" alt="Romina" style={{ width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover', border: '2px solid white', marginLeft: '-15px' }} />
+                                <img src="/assets/equipo/pablo.webp" alt="Pablo" style={{ width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover', border: '2px solid white', marginLeft: '-15px' }} />
+                                <img src="/assets/equipo/jenifer.webp" alt="Yenifer" style={{ width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover', border: '2px solid white', marginLeft: '-15px' }} />
+                            </div>
+                            <div>
+                                <p style={{ fontSize: '0.9rem', fontWeight: '500', color: 'white', margin: 0 }}>Habla directo con nosotros online</p>
+                                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)', margin: 0 }}>Equipo Plugin</p>
+                            </div>
                         </div>
 
                         <div className="contact-details-mini">
-                            <p>Montevideo, Uruguay</p>
-                            <p>hola@plugin.uy</p>
+                            <p>Punta del Este, Uruguay</p>
+                            <p>info@plugin.uy</p>
                         </div>
                     </div>
 
