@@ -74,6 +74,7 @@ const Navbar = () => {
                     <li><a href="#hero" onClick={handleLinkClick}>Inicio</a></li>
                     <li><a href="#about" onClick={handleLinkClick}>Nosotros</a></li>
                     <li><a href="#services" onClick={handleLinkClick}>Servicios</a></li>
+                    <li><a href="#faq" onClick={handleLinkClick}>FAQ</a></li>
                     <li><a href="#contact" onClick={handleLinkClick}>Contacto</a></li>
                 </ul>
             </div>

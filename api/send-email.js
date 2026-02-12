@@ -24,19 +24,22 @@ export default async function handler(req, res) {
             return res.status(500).json({ error: 'Error al verificar captcha' });
         }
 
-        // Configurar el transportador SMTP (Gmail en este caso)
+        // Configurar el transportador SMTP para Webempresa
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'mail.plugin.uy',
+            port: 465,
+            secure: true, // true para 465, false para otros puertos
             auth: {
-                user: process.env.EMAIL_USER, // Tu email de Gmail
-                pass: process.env.EMAIL_PASS, // Tu contraseña de aplicación (App Password)
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
             },
         });
 
         const mailOptions = {
-            from: `"${nombre} ${apellido}" <${process.env.EMAIL_USER}>`, // Remitente (debe ser tu email autenticado)
-            replyTo: email, // Para que al responder le llegue al usuario
-            to: ['salvacastro06@gmail.com', 'gssalva@gmail.com'], // Destinatarios
+            from: `"Plugin Contacto" <${process.env.EMAIL_USER}>`, // El remitente debe ser la cuenta autenticada
+            replyTo: email, // Responder al usuario que llenó el formulario
+            // Se puede configurar en el .env como: EMAIL_TO=info@plugin.uy,salvacastro06@gmail.com
+            to: process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',').map(e => e.trim()) : ['info@plugin.uy', 'salvacastro06@gmail.com'],
             subject: `Nuevo mensaje de contacto de: ${nombre} ${apellido}`,
             text: `
                 Has recibido un nuevo mensaje desde el formulario de contacto:
@@ -58,8 +61,6 @@ export default async function handler(req, res) {
         };
 
         // Si hay un segundo email configurado en variables de entorno, agregarlo
-        // O simplemente agregarlo hardcodeado si el usuario lo prefiere así por ahora
-        // Para este caso, dejaré comentado cómo agregar más destinatarios dinámicamente
         // if (process.env.EMAIL_CC) { mailOptions.cc = process.env.EMAIL_CC; }
 
         try {
