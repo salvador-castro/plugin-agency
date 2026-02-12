@@ -115,7 +115,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="section contact-section">
+        <section id="contact" className="section contact-section section-divider-dot">
             <div className="container">
                 <h2 className="section-title">Contacto</h2>
                 <div className="contact-wrapper two-column-layout">

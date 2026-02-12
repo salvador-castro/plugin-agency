@@ -33,7 +33,7 @@ const Process = () => {
     ];
 
     return (
-        <section id="process" className="process-section">
+        <section id="process" className="process-section section-divider-dot">
             <div className="container">
                 <h2 className="section-title">Cómo trabajamos</h2>
                 <p className="process-intro">

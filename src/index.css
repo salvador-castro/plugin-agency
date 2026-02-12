@@ -477,6 +477,151 @@ button {
   color: var(--text-color);
 }
 
+/* ============================================
+   SEPARADORES DE SECCIONES
+   ============================================ */
+
+/* Opción 1: Línea horizontal sutil con degradado */
+.section-divider-gradient {
+  position: relative;
+  padding-top: 5rem;
+}
+
+.section-divider-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), transparent);
+}
+
+/* Opción 2: Línea sólida centrada con punto decorativo */
+.section-divider-solid {
+  position: relative;
+  padding-top: 5rem;
+}
+
+.section-divider-solid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 400px;
+  height: 2px;
+  background: #e5e7eb;
+}
+
+.section-divider-solid::after {
+  content: '◆';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-color);
+  font-size: 1rem;
+  background: white;
+  padding: 0 1rem;
+}
+
+/* Opción 3: Línea con degradado más gruesa */
+.section-divider-thick {
+  position: relative;
+  padding-top: 5rem;
+}
+
+.section-divider-thick::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(37, 99, 235, 0.1) 20%,
+      rgba(37, 99, 235, 0.3) 50%,
+      rgba(37, 99, 235, 0.1) 80%,
+      transparent 100%);
+}
+
+/* Opción 4: Separador con espaciado y fondos alternados */
+.section-alternate-bg {
+  background-color: var(--light-bg);
+}
+
+/* Opción 5: Separador moderno con doble línea */
+.section-divider-double {
+  position: relative;
+  padding-top: 5rem;
+}
+
+.section-divider-double::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 500px;
+  height: 1px;
+  background: var(--primary-color);
+  opacity: 0.3;
+}
+
+.section-divider-double::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  max-width: 300px;
+  height: 1px;
+  background: var(--primary-color);
+  opacity: 0.2;
+}
+
+/* Opción 6: Separador con punto central */
+.section-divider-dot {
+  position: relative;
+  padding-top: 5rem;
+}
+
+.section-divider-dot::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.section-divider-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      rgba(37, 99, 235, 0.1) 0%,
+      rgba(37, 99, 235, 0.3) 45%,
+      transparent 50%,
+      rgba(37, 99, 235, 0.3) 55%,
+      rgba(37, 99, 235, 0.1) 100%);
+}
+
 /* Services */
 .services-section {
   background-color: var(--white);
@@ -3690,7 +3835,7 @@ section.contact-section {
 
   .member-bio-ds {
     display: none;
-    /* Hide bio on mobile to keep it clean, or allow tap */
+    /* Hidden on mobile to keep it clean and concise */
   }
 }
 

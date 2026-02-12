@@ -48,7 +48,7 @@ const WorkPacks = () => {
     ];
 
     return (
-        <section id="workpacks" className="workpacks-section">
+        <section id="workpacks" className="workpacks-section section-divider-dot">
             <div className="container">
                 <h2 className="section-title">Packs de trabajo</h2>
                 <div className="packs-grid">

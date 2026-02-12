@@ -11,7 +11,7 @@ const Problem = () => {
     ];
 
     return (
-        <section id="problem" className="problem-section">
+        <section id="problem" className="problem-section section-divider-dot">
             <div className="container">
                 <div className="problem-header">
                     <h2 className="section-title">El problema que resolvemos</h2>

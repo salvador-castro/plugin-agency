@@ -33,7 +33,7 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="section accent-bg about-section">
+        <section id="about" className="section accent-bg about-section section-divider-dot">
             <div className="container">
                 <h2 className="section-title">Nosotros</h2>
 

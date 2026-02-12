@@ -10,7 +10,7 @@ const Method = () => {
     ];
 
     return (
-        <section id="method" className="method-section">
+        <section id="method" className="method-section section-divider-dot">
             <div className="container">
                 <h2 className="section-title">Cómo ayudamos</h2>
                 <div className="method-content">
