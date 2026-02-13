@@ -3239,18 +3239,43 @@ section.contact-section {
 
 .team-card-ds {
   position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #f3f4f6;
-  height: 400px;
-  /* Fixed height for uniformity */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 420px;
+  /* Increased slightly for content */
+  perspective: 1000px;
+  cursor: pointer;
 }
 
-.team-card-ds:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.card-inner-ds {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+
+.team-card-ds.flipped .card-inner-ds {
+  transform: rotateY(180deg);
+}
+
+.card-front-ds,
+.card-back-ds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Front Styling */
+.card-front-ds {
+  background-color: #f3f4f6;
+  color: black;
 }
 
 .card-image-wrapper {
@@ -3268,7 +3293,12 @@ section.contact-section {
 }
 
 .team-card-ds:hover .member-image-ds {
+  /* Only scale if not flipped */
   transform: scale(1.05);
+}
+
+.team-card-ds.flipped .member-image-ds {
+  transform: scale(1);
 }
 
 .card-overlay-ds {
@@ -3289,12 +3319,11 @@ section.contact-section {
   padding: 25px;
   z-index: 2;
   color: white;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-}
-
-.team-card-ds:hover .card-content-ds {
-  transform: translateY(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .member-name-ds {
@@ -3309,56 +3338,200 @@ section.contact-section {
   font-size: 0.95rem;
   font-weight: 500;
   color: #cbd5e1;
-  /* Light gray */
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.member-bio-ds {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  /* Ensure content is hidden when collapsed */
+/* More Info Button */
+.more-info-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.team-card-ds:hover .member-bio-ds {
-  height: auto;
-  opacity: 1;
-  margin-top: 10px;
+.more-info-btn:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
-.member-bio-ds p {
+/* Back Styling */
+.card-back-ds {
+  background-color: #1a1a1a;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-back-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) blur(5px) brightness(0.4);
+  z-index: 0;
+}
+
+.card-back-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.card-back-content {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.member-name-back {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.member-role-back {
   font-size: 0.9rem;
-  line-height: 1.5;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.member-bio-ds {
+  /* Removed existing, using specific logic below */
+  display: none;
+}
+
+.member-bio-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 5px;
+  /* Space for scrollbar */
+  max-height: 100px;
+}
+
+/* Custom scrollbar for bio */
+.member-bio-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.member-bio-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.member-bio-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.member-bio-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: #e2e8f0;
+}
+
+.member-skills-container {
+  margin-bottom: 20px;
+}
+
+.skills-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: rgba(37, 99, 235, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  color: #bfdbfe;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .team-grid-ds {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
   }
 
   .team-card-ds {
-    height: 350px;
+    height: 450px;
+    /* Taller on mobile for better touch targets */
   }
 
   .card-content-ds {
     transform: translateY(0);
-    /* Always show on mobile ? Or keep effect */
-    padding: 15px;
+    padding: 20px;
   }
 
   .member-name-ds {
-    font-size: 1.25rem;
-  }
-
-  .member-bio-ds {
-    display: none;
-    /* Hidden on mobile to keep it clean and concise */
+    font-size: 1.3rem;
   }
 }
 
