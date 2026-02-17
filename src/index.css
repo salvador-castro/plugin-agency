@@ -3214,6 +3214,7 @@ section.contact-section {
 
 .about-intro-container {
   margin-bottom: 0.5rem !important;
+  text-align: center;
   /* Drastically reduced from 2rem/4rem */
 }
 
@@ -3253,6 +3254,8 @@ section.contact-section {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  /* iOS Fix */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
 }
@@ -3270,12 +3273,32 @@ section.contact-section {
   backface-visibility: hidden;
   border-radius: 12px;
   overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  /* iOS overflow fix */
 }
 
 /* Front Styling */
 .card-front-ds {
   background-color: #f3f4f6;
   color: black;
+  z-index: 2;
+  /* Initially on top */
+}
+
+.card-back-ds {
+  z-index: 1;
+  /* Initially below */
+}
+
+.team-card-ds.flipped .card-front-ds {
+  z-index: 1;
+  /* Move back when flipped */
+}
+
+.team-card-ds.flipped .card-back-ds {
+  z-index: 2;
+  /* Move forward when flipped */
 }
 
 .card-image-wrapper {
@@ -3489,6 +3512,13 @@ section.contact-section {
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: white;
+  color: var(--primary-color);
+  border-color: white;
 }
 
 .close-btn {
