@@ -41,7 +41,7 @@ const TrustedBy = () => {
             <div className="container">
                 <p className="tb-eyebrow">CLIENTES &amp; PARTNERS</p>
                 <h2 className="section-title">
-                    Marcas que <span>confían</span> en nosotros
+                    Empresas que <span>confían</span> en nosotros
                 </h2>
                 <p className="tb-subtitle">
                     Desde proyectos Web3 globales hasta marcas locales y venues de prestigio.
