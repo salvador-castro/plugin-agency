@@ -897,7 +897,7 @@ h4 {
 /* Flip card */
 .team-card-ds {
   position: relative;
-  height: 300px;
+  height: 420px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -908,6 +908,7 @@ h4 {
   transform-style: preserve-3d;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-card-ds.flipped .card-inner-ds {
@@ -943,11 +944,15 @@ h4 {
   height: 100%;
   object-fit: cover;
   filter: grayscale(20%);
-  transition: filter 0.3s;
+  transition: filter 0.5s ease;
 }
 
 .team-card-ds:hover .member-image-ds {
   filter: grayscale(0%);
+}
+
+.team-card-ds.flipped .member-image-ds {
+  filter: blur(6px) brightness(0.5);
 }
 
 .card-overlay-ds {
@@ -1057,6 +1062,7 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .skills-tags {
@@ -1766,13 +1772,23 @@ h4 {
 }
 
 @keyframes tb-scroll-forward {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes tb-scroll-reverse {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* ── Logo card ── */
