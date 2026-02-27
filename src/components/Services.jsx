@@ -1,28 +1,30 @@
+import { Target, Smartphone, Monitor, Bot, Handshake } from 'lucide-react';
+
 const services = [
     {
         title: "Estrategia, Marca y Comunicación",
         description: "Ordenamos identidad, propuesta de valor y narrativa para que cada punto de contacto diga lo mismo: claro, consistente y con intención.",
-        icon: "🎯"
+        icon: <Target size={28} />
     },
     {
         title: "Contenidos y Redes Sociales",
         description: "Diseñamos una estrategia de contenidos que represente al proyecto y lo vuelva encontrable donde importa.",
-        icon: "📱"
+        icon: <Smartphone size={28} />
     },
     {
         title: "Diseño Web y Soluciones Digitales",
         description: "Diseñamos y desarrollamos sitios web y landings orientadas a conversión, alineadas a la marca y al objetivo del negocio.",
-        icon: "💻"
+        icon: <Monitor size={28} />
     },
     {
         title: "Automatización, Procesos e IA aplicada",
         description: "Implementamos flujos para ahorrar tiempo, estandarizar y escalar operaciones y contenido inteligentemente.",
-        icon: "🤖"
+        icon: <Bot size={28} />
     },
     {
         title: "PR, Experiencias y Ecosistema",
         description: "Creamos activaciones y conexiones que aumentan visibilidad real dentro del ecosistema creativo y tecnológico.",
-        icon: "🤝"
+        icon: <Handshake size={28} />
     }
 ];
 

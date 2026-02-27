@@ -1,33 +1,35 @@
+import { MessageSquareOff, Share2, Puzzle, MegaphoneOff, Clock, EyeOff } from 'lucide-react';
+
 const PROBLEMS = [
     {
         title: "Mensaje poco claro",
         text: "Tu marca y propuesta no están claras — cuesta explicarlas y venderlas.",
-        icon: "✕"
+        icon: <MessageSquareOff size={24} />
     },
     {
         title: "Redes y contenidos desalineados",
         text: "Lo que mostrás en redes no representa lo que realmente hacen.",
-        icon: "✕"
+        icon: <Share2 size={24} />
     },
     {
         title: "Falta de coherencia",
         text: "Web, redes y producto funcionan por separado y se pierde coherencia.",
-        icon: "✕"
+        icon: <Puzzle size={24} />
     },
     {
         title: "El servicio es bueno, el mensaje no",
         text: "El servicio es sólido, pero el lenguaje no lo comunica.",
-        icon: "✕"
+        icon: <MegaphoneOff size={24} />
     },
     {
         title: "Procesos que consumen tiempo",
         text: "Tareas repetidas, falta de seguimiento e improvisación operativa.",
-        icon: "✕"
+        icon: <Clock size={24} />
     },
     {
         title: "Visibilidad sin estrategia",
         text: "Querés crecer, pero sin hacer ruido vacío ni disparar sin dirección.",
-        icon: "✕"
+        icon: <EyeOff size={24} />
     }
 ];
 
