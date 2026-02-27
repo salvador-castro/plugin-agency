@@ -1,118 +1,79 @@
-import { useMemo } from 'react';
+const clients = [
+    { name: "Binance", logo: "/assets/empresas/binance.webp" },
+    { name: "Polkadot", logo: "/assets/empresas/polkadot.webp" },
+    { name: "Devconnect", logo: "/assets/empresas/devconnect.webp" },
+    { name: "Bitget", logo: "/assets/empresas/bitget.webp" },
+    { name: "Cardano", logo: "/assets/empresas/cardano.webp" },
+    { name: "Blockchain Rio", logo: "/assets/empresas/blockchain-rio.webp" },
+    { name: "Radisson", logo: "/assets/empresas/radisson.webp" },
+    { name: "Meta Pool", logo: "/assets/empresas/meta-pool.webp" },
+    { name: "7AM Tickets", logo: "/assets/empresas/7am-tickets.webp" },
+    { name: "Forum Propiedades", logo: "/assets/empresas/forum-propiedades.webp" },
+    { name: "Blockchain Summit", logo: "/assets/empresas/blockchain-summit.webp" },
+    { name: "Scroll Protocol", logo: "/assets/empresas/scroll-protocol.webp" },
+    { name: "Criptala", logo: "/assets/empresas/criptala.webp" },
+    { name: "Zag Coliving", logo: "/assets/empresas/zag-coliving.webp" },
+    { name: "Vermut Rooster", logo: "/assets/empresas/vermut-rooster.webp" },
+    { name: "Nexchange", logo: "/assets/empresas/nexchange.webp" },
+    { name: "Casa Pueblo", logo: "/assets/empresas/casa-pueblo.webp" },
+    { name: "We Bike", logo: "/assets/empresas/we-bike.webp" },
+];
+
+const LogoItem = ({ client }) => (
+    <div className="tb-logo-item">
+        <img
+            src={client.logo}
+            alt={client.name}
+            className="tb-logo-img"
+            loading="lazy"
+            width="140"
+            height="60"
+        />
+    </div>
+);
 
 const TrustedBy = () => {
-    const clientCategories = useMemo(() => [
-        {
-            title: "Blockchain & Web3",
-            clients: [
-                { name: "Devconnect", logo: "/assets/empresas/devconnect.webp" },
-                { name: "Binance", logo: "/assets/empresas/binance.webp" },
-                { name: "Polkadot", logo: "/assets/empresas/polkadot.webp" },
-                { name: "Cardano", logo: "/assets/empresas/cardano.webp" },
-                { name: "Bitget", logo: "/assets/empresas/bitget.webp" },
-                { name: "Blockchain Rio", logo: "/assets/empresas/blockchain-rio.webp" },
-                { name: "Blockchain Summit", logo: "/assets/empresas/blockchain-summit.webp" },
-                { name: "Scroll Protocol", logo: "/assets/empresas/scroll-protocol.webp" },
-                { name: "Meta Pool", logo: "/assets/empresas/meta-pool.webp" },
-                { name: "Hashrate Space", logo: "/assets/empresas/hashrate.webp" },
-                { name: "Roderich's Crypto House", logo: "/assets/empresas/roderich.webp" },
-                { name: "Nexchange", logo: "/assets/empresas/nexchange.webp" },
-                { name: "Criptala", logo: "/assets/empresas/criptala.webp" },
-                { name: "R3al Blocks", logo: "/assets/empresas/r3al-blocks.webp" },
-            ]
-        },
-        {
-            title: "Partners Corporativos y Locales",
-            clients: [
-                { name: "7AM Tickets", logo: "/assets/empresas/7am-tickets.webp" },
-                { name: "Forum Propiedades", logo: "/assets/empresas/forum-propiedades.webp" },
-                { name: "Luxury Punta", logo: "/assets/empresas/luxury-punta.webp" },
-                { name: "DF Consultores", logo: "/assets/empresas/df-consultores.webp" },
-                { name: "Bem Local", logo: "/assets/empresas/bem-local.webp" },
-                { name: "Zag Coliving", logo: "/assets/empresas/zag-coliving.webp" },
-                { name: "Club del Inversor", logo: "/assets/empresas/club-inversor.webp" },
-            ]
-        },
-        {
-            title: "Marcas & Activaciones",
-            clients: [
-                { name: "Vermut Rooster", logo: "/assets/empresas/vermut-rooster.webp" },
-                { name: "Más Colonia", logo: "/assets/empresas/mas-colonia.webp" },
-                { name: "Agua Vital Kangen", logo: "/assets/empresas/agua-kangen.webp" },
-                { name: "Asadao", logo: "/assets/empresas/asadao.webp" },
-                { name: "Urusu", logo: "/assets/empresas/urusu.webp" },
-                { name: "Handy", logo: "/assets/empresas/handy.webp" },
-                { name: "Viatik", logo: "/assets/empresas/viatik.webp" },
-                { name: "We Bike", logo: "/assets/empresas/we-bike.webp" },
-            ]
-        },
-        {
-            title: "Venues de Prestigio",
-            clients: [
-                { name: "Casa Pueblo", logo: "/assets/empresas/casa-pueblo.webp" },
-                { name: "MACA", logo: "/assets/empresas/maca.webp" },
-                { name: "Radisson Victoria Plaza", logo: "/assets/empresas/radisson.webp" },
-            ]
-        }
-    ], []);
-
-    // Render a single logo card
-    const LogoCard = ({ client, keyPrefix }) => (
-        <div className="carousel-logo-card">
-            <img
-                src={client.logo}
-                alt={client.name}
-                className="client-logo"
-                width="186"
-                height="100"
-                loading="lazy"
-            />
-        </div>
-    );
+    const row1 = clients.slice(0, 9);
+    const row2 = clients.slice(9);
 
     return (
         <section className="trusted-by-section">
             <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Confían en Nosotros</h2>
-                    <p className="section-subtitle">
-                        Trabajamos con líderes del ecosistema Web3, marcas innovadoras y venues culturales de renombre
-                    </p>
-                </div>
+                <p className="tb-eyebrow">CLIENTES &amp; PARTNERS</p>
+                <h2 className="section-title">
+                    Marcas que <span>confían</span> en nosotros
+                </h2>
+                <p className="tb-subtitle">
+                    Desde proyectos Web3 globales hasta marcas locales y venues de prestigio.
+                </p>
+            </div>
 
-                <div className="categories-container">
-                    {clientCategories.map((category, categoryIndex) => (
-                        <div key={categoryIndex} className="category-section">
-                            <h3 className="carousel-category-title">{category.title}</h3>
-
-                            <div className="carousel-row">
-                                <div className="carousel-wrapper">
-                                    {/* 
-                                        Pure CSS infinite scroll - we render the items twice 
-                                        in React instead of cloning via DOM manipulation.
-                                        This eliminates the forced reflow from useEffect.
-                                    */}
-                                    <div className="carousel-scroller">
-                                        {/* First set of logos */}
-                                        {category.clients.map((client, index) => (
-                                            <LogoCard
-                                                key={`first-${index}`}
-                                                client={client}
-                                            />
-                                        ))}
-                                        {/* Second set (duplicate for seamless loop) */}
-                                        {category.clients.map((client, index) => (
-                                            <LogoCard
-                                                key={`second-${index}`}
-                                                client={client}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            {/* Row 1 — scroll left → right */}
+            <div className="tb-track-wrapper">
+                <div className="tb-fade-left" />
+                <div className="tb-fade-right" />
+                <div className="tb-track tb-track--forward">
+                    {[...row1, ...row1].map((c, i) => (
+                        <LogoItem key={`r1-${i}`} client={c} />
                     ))}
                 </div>
+            </div>
+
+            {/* Row 2 — scroll right → left */}
+            <div className="tb-track-wrapper" style={{ marginTop: '1.5rem' }}>
+                <div className="tb-fade-left" />
+                <div className="tb-fade-right" />
+                <div className="tb-track tb-track--reverse">
+                    {[...row2, ...row2].map((c, i) => (
+                        <LogoItem key={`r2-${i}`} client={c} />
+                    ))}
+                </div>
+            </div>
+
+            <div className="container">
+                <p className="tb-count-note">
+                    +30 proyectos ejecutados &mdash; Web3, marcas, venues y partners corporativos
+                </p>
             </div>
         </section>
     );

@@ -5,6 +5,7 @@ import Problem from './components/Problem';
 import Method from './components/Method';
 import Services from './components/Services';
 import WorkPacks from './components/WorkPacks';
+import TrustedBy from './components/TrustedBy';
 import About from './components/About';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
@@ -21,6 +22,7 @@ function App() {
       <Method />
       <Services />
       <WorkPacks />
+      <TrustedBy />
       <About />
       <Process />
       <FAQ />

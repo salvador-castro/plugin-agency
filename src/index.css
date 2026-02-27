@@ -1691,6 +1691,134 @@ h4 {
 }
 
 /* ==========================================
+   TRUSTED BY SECTION
+   ========================================== */
+.trusted-by-section {
+  background: var(--bg-2);
+  padding: 6rem 0 5rem;
+  overflow: hidden;
+}
+
+.tb-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.tb-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-2);
+  max-width: 520px;
+  margin: -2rem auto 3rem;
+  line-height: 1.65;
+}
+
+/* ── Track wrapper (viewport clip + edge fades) ── */
+.tb-track-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tb-fade-left,
+.tb-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tb-fade-left {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-2) 0%, transparent 100%);
+}
+
+.tb-fade-right {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-2) 0%, transparent 100%);
+}
+
+/* ── Scrolling track ── */
+.tb-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 0.5rem 0;
+}
+
+.tb-track--forward {
+  animation: tb-scroll-forward 35s linear infinite;
+}
+
+.tb-track--reverse {
+  animation: tb-scroll-reverse 30s linear infinite;
+}
+
+.tb-track-wrapper:hover .tb-track {
+  animation-play-state: paused;
+}
+
+@keyframes tb-scroll-forward {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes tb-scroll-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── Logo card ── */
+.tb-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+  min-width: 160px;
+  height: 72px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  flex-shrink: 0;
+}
+
+.tb-logo-item:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--glow-cyan);
+}
+
+.tb-logo-img {
+  max-width: 120px;
+  max-height: 44px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.75);
+  transition: filter 0.3s;
+}
+
+.tb-logo-item:hover .tb-logo-img {
+  filter: grayscale(0) brightness(1);
+}
+
+.tb-count-note {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.82rem;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================
    UTILITY ANIMATIONS
    ========================================== */
 @keyframes fadeInUp {
