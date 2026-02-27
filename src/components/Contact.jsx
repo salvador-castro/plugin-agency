@@ -1,6 +1,22 @@
-import { useState, useRef, lazy, Suspense, useEffect } from 'react';
+import { useState, useRef, lazy, Suspense, useEffect, Component } from 'react';
 
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
+
+class RecaptchaErrorBoundary extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
+    static getDerivedStateFromError() {
+        return { hasError: true };
+    }
+    render() {
+        if (this.state.hasError) {
+            return <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>Captcha no disponible en este entorno.</p>;
+        }
+        return this.props.children;
+    }
+}
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -240,13 +256,19 @@ const Contact = () => {
                             </div>
 
                             <div className="form-field header-btn" style={{ margin: '15px 0' }}>
-                                <Suspense fallback={<div>Cargando...</div>}>
-                                    <ReCAPTCHA
-                                        ref={captchaRef}
-                                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                                        onChange={setCaptchaToken}
-                                    />
-                                </Suspense>
+                                {import.meta.env.VITE_RECAPTCHA_SITE_KEY ? (
+                                    <RecaptchaErrorBoundary>
+                                        <Suspense fallback={<div>Cargando...</div>}>
+                                            <ReCAPTCHA
+                                                ref={captchaRef}
+                                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                                                onChange={setCaptchaToken}
+                                            />
+                                        </Suspense>
+                                    </RecaptchaErrorBoundary>
+                                ) : (
+                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>⚠️ Captcha desactivado (entorno local sin .env)</p>
+                                )}
                             </div>
 
                             {status && (

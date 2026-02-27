@@ -1,41 +1,63 @@
-import React from 'react';
+const PROBLEMS = [
+    {
+        title: "Mensaje poco claro",
+        text: "Tu marca y propuesta no están claras — cuesta explicarlas y venderlas.",
+        icon: "✕"
+    },
+    {
+        title: "Redes y contenidos desalineados",
+        text: "Lo que mostrás en redes no representa lo que realmente hacen.",
+        icon: "✕"
+    },
+    {
+        title: "Falta de coherencia",
+        text: "Web, redes y producto funcionan por separado y se pierde coherencia.",
+        icon: "✕"
+    },
+    {
+        title: "El servicio es bueno, el mensaje no",
+        text: "El servicio es sólido, pero el lenguaje no lo comunica.",
+        icon: "✕"
+    },
+    {
+        title: "Procesos que consumen tiempo",
+        text: "Tareas repetidas, falta de seguimiento e improvisación operativa.",
+        icon: "✕"
+    },
+    {
+        title: "Visibilidad sin estrategia",
+        text: "Querés crecer, pero sin hacer ruido vacío ni disparar sin dirección.",
+        icon: "✕"
+    }
+];
 
 const Problem = () => {
-    const problems = [
-        "Tu marca y tu propuesta no están claras (cuesta explicarlas y venderlas).",
-        "Redes y contenidos no representan lo que realmente hacen.",
-        "Web, redes y producto funcionan por separado y se pierde coherencia.",
-        "El servicio es sólido, pero el mensaje no lo muestra.",
-        "Los procesos consumen tiempo: tareas repetidas, falta de seguimiento, improvisación.",
-        "Querés visibilidad, pero sin “hacer ruido” sin sentido."
-    ];
-
     return (
-        <section id="problem" className="problem-section section-divider-dot">
+        <section id="problem" className="problem-section section-divider">
             <div className="container">
                 <div className="problem-header">
-                    <h2 className="section-title">El problema que resolvemos</h2>
-                    <p className="problem-intro">Muchos proyectos avanzan, pero se sienten desordenados: hay piezas buenas, pero no encajan.</p>
+                    <p className="problem-eyebrow">// el problema que resolvemos</p>
+                    <h2 className="section-title">
+                        Proyectos que avanzan<br />
+                        pero se sienten <span>desordenados</span>
+                    </h2>
+                    <p style={{ color: 'var(--text-2)', maxWidth: '560px', margin: '0 auto', fontSize: '0.95rem' }}>
+                        Hay piezas buenas, pero no encajan. El desafío no es hacer más: es ordenar, integrar y conectar.
+                    </p>
                 </div>
 
                 <div className="problem-grid">
-                    {problems.map((item, index) => (
-                        <div key={index} className="problem-card">
-                            <div className="problem-icon-wrapper">
-                                <div className="problem-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                                </div>
-                            </div>
-                            <p className="problem-text">{item}</p>
+                    {PROBLEMS.map((item, i) => (
+                        <div key={i} className="problem-card">
+                            <div className="problem-icon">{item.icon}</div>
+                            <h3>{item.title}</h3>
+                            <p>{item.text}</p>
                         </div>
                     ))}
                 </div>
 
-                <div className="problem-footer">
-                    <p className="problem-conclusion">En ese punto, el desafío no es hacer más: es <span className="highlight-text">ordenar, integrar y conectar</span>.</p>
-                    <div className="problem-cta-wrapper">
-                        <a href="#contact" className="btn btn-primary problem-cta">Hablemos de tu proyecto</a>
-                    </div>
+                <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+                    <a href="#contact" className="btn btn-primary">Hablemos de tu proyecto</a>
                 </div>
             </div>
         </section>

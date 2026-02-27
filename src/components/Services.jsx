@@ -6,7 +6,7 @@ const services = [
     },
     {
         title: "Contenidos y Redes Sociales",
-        description: "Diseñamos una estrategia de contenidos que represente al proyecto y lo vuelva encontrable.",
+        description: "Diseñamos una estrategia de contenidos que represente al proyecto y lo vuelva encontrable donde importa.",
         icon: "📱"
     },
     {
@@ -16,7 +16,7 @@ const services = [
     },
     {
         title: "Automatización, Procesos e IA aplicada",
-        description: "Implementamos flujos para ahorrar tiempo, estandarizar y escalar operaciones y contenido.",
+        description: "Implementamos flujos para ahorrar tiempo, estandarizar y escalar operaciones y contenido inteligentemente.",
         icon: "🤖"
     },
     {
@@ -28,9 +28,9 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="services" className="services-section section-divider-dot">
+        <section id="services" className="services-section section-divider">
             <div className="container">
-                <h2 className="section-title">Nuestros Servicios</h2>
+                <h2 className="section-title">Nuestros <span>Servicios</span></h2>
                 <div className="services-grid">
                     {services.map((service, index) => (
                         <div key={index} className="service-card">
