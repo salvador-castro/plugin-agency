@@ -22,7 +22,7 @@ function App() {
       <Method />
       <Services />
       <WorkPacks />
-      <TrustedBy />
+      {/* <TrustedBy /> */}
       <About />
       <Process />
       <FAQ />
