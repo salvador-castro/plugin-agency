@@ -1,0 +1,11 @@
+{
+    "name": "Plugin Agency",
+    "navigation": [
+        {
+            "group": "Getting Started",
+            "pages": [
+                "index"
+            ]
+        }
+    ]
+}
