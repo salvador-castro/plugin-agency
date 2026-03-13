@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
         // Configurar el transportador SMTP para Webempresa
         const transporter = nodemailer.createTransport({
-            host: 'mail.plugin.uy',
+            host: 'smtp.gmail.com',
             port: 465,
             secure: true, // true para 465, false para otros puertos
             auth: {

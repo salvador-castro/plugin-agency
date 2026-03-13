@@ -69,7 +69,7 @@ const About = () => {
         {
             name: "Maximiliano Pérez",
             role: "Founder & Director",
-            bio: "Lidera Plugin: visión, desarrollo de negocio y equipos. Integra comunidad, productora y agencia en un ecosistema.",
+            bio: "Lidera Plugin Agency: visión, desarrollo de negocio y equipos. Integra comunidad, productora y agencia en un ecosistema.",
             skills: [
                 "Community Builder",
                 "Strategic Planning",
@@ -81,7 +81,7 @@ const About = () => {
         {
             name: "Salvador Castro",
             role: "Web Developer",
-            bio: "Responsable de Desarrollo Web y Arquitectura de Soluciones.",
+            bio: "Responsable de desarrollo web y arquitectura de soluciones.",
             skills: [
                 "React Development",
                 "Python Backend",
