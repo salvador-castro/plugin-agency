@@ -91,11 +91,17 @@ const Contact = () => {
                 captchaRef.current.reset();
                 setTimeout(() => setStatus(null), 5000);
             } else {
-                const data = await response.json();
-                throw new Error(data.error || 'Error en el servidor');
+                let errorMessage = 'Error en el servidor';
+                try {
+                    const data = await response.json();
+                    errorMessage = data.error || errorMessage;
+                } catch (e) {
+                    console.error('La respuesta del servidor no fue JSON', e);
+                }
+                throw new Error(errorMessage);
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error al enviar formulario:', error);
             setStatus({ type: 'error', message: error.message || 'Hubo un error al enviar el mensaje.' });
             setTimeout(() => setStatus(null), 5000);
         }
