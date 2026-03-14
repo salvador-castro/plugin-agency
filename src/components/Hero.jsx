@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 const WORDS = [
     'marca,',
-    'contenido',
-    'y tecnología'
+    'contenido,',
+    'y tecnología.'
 ];
 
 const Hero = () => {
@@ -84,10 +84,17 @@ const Hero = () => {
                 {/* Headline */}
                 <h1>
                     Ordenamos tu proyecto digital:{' '}
-                    <span className="hero-gradient-text">
-                        {displayText}
+                    <span style={{ display: 'inline-grid', verticalAlign: 'bottom', textAlign: 'left' }}>
+                        <span style={{ gridArea: '1/1', visibility: 'hidden', whiteSpace: 'nowrap' }}>
+                            {WORDS.reduce((a, b) => a.length > b.length ? a : b)}
+                        </span>
+                        <span className="hero-gradient-text" style={{ gridArea: '1/1' }}>
+                            {displayText}
+                            {(!isDeleting && charIndex < WORDS[wordIndex].length) || (isDeleting && charIndex > 0) ? (
+                                <span className="hero-cursor" />
+                            ) : null}
+                        </span>
                     </span>
-                    <span className="hero-cursor" />
                 </h1>
 
                 {/* Subtitle */}
