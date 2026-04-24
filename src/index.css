@@ -407,12 +407,53 @@ h4 {
   padding-top: 5rem;
 }
 
+.hero-layout {
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-lottie-col {
+  width: 380px;
+  flex-shrink: 0;
+  order: 1;
+}
+
+.hero-text-col {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  order: 2;
+}
+
+@media (max-width: 900px) {
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-lottie-col {
+    width: 280px;
+    order: 2;
+  }
+
+  .hero-text-col {
+    order: 1;
+    align-items: center;
+  }
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   padding: 0.4rem 1rem;
-  border-radius: 50px;
+  border-radius: 1px;
   border: 1px solid var(--border);
   background: var(--surface);
   font-family: var(--font-mono);
@@ -423,9 +464,9 @@ h4 {
 }
 
 .hero-badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  border-radius: 10%;
   background: var(--cyan);
   animation: pulse 2s ease-in-out infinite;
 }
