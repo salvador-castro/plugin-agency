@@ -126,6 +126,22 @@ const About = () => {
                 "Community Management"
             ],
             image: "/assets/equipo/romina.webp"
+        },
+        {
+            name: "Federico Massarino",
+            role: "Dirección Creativa & Comunicación Visual",
+            bio: "Diseño gráfico, contenido audiovisual, generación de imágenes con IA y desarrollo conceptual para marcas, campañas y eventos.",
+            skills: [
+                "Creative Direction",
+                "Visual Communication",
+                "AI Content Creation",
+                "Concept Development",
+                "dirección creativa",
+                "comunicación visual",
+                "generación de contenido con IA",
+                "conceptualización"
+            ],
+            image: "/assets/equipo/massaweb.webp"
         }
     ];
 
