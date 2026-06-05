@@ -42,7 +42,12 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p className="footer-copy">© {year} Plugin Agency — Todos los derechos reservados.</p>
+                    <p className="footer-copy">
+                        © {year} Plugin Agency — Todos los derechos reservados. — desarrollado por{' '}
+                        <a href="https://salvadorcastro.vercel.app/" target="_blank" rel="noreferrer" style={{ color: 'var(--cyan)', textDecoration: 'none' }}>
+                            salvaCastro
+                        </a>
+                    </p>
                     <div className="footer-socials">
                         {/* Instagram */}
                         <a href="https://instagram.com/plugin.agency.uy/" target="_blank" rel="noreferrer" className="footer-social-link" aria-label="Instagram">

@@ -75,56 +75,60 @@ const Hero = () => {
             </div>
 
             <div className="container hero-content-wrapper">
-                {/* Badge */}
-                <div className="hero-badge">
-                    <span className="hero-badge-dot" />
-                    <span className="mono">Agencia Digital · Uruguay</span>
-                </div>
 
-                {/* Headline */}
-                <h1>
-                    Ordenamos tu proyecto digital:{' '}
-                    <span style={{ display: 'inline-grid', verticalAlign: 'bottom', textAlign: 'left' }}>
-                        <span style={{ gridArea: '1/1', visibility: 'hidden', whiteSpace: 'nowrap' }}>
-                            {WORDS.reduce((a, b) => a.length > b.length ? a : b)}
-                        </span>
-                        <span className="hero-gradient-text" style={{ gridArea: '1/1' }}>
-                            {displayText}
-                            {(!isDeleting && charIndex < WORDS[wordIndex].length) || (isDeleting && charIndex > 0) ? (
-                                <span className="hero-cursor" />
-                            ) : null}
-                        </span>
-                    </span>
-                </h1>
-
-                {/* Subtitle */}
-                <p className="hero-subtitle">
-                    Convertimos proyectos digitales en un sistema conectado: branding, comunicación, contenidos, web y automatización trabajando en conjunto para ganar claridad, coherencia y visibilidad.
-                </p>
-
-                {/* CTAs */}
-                <div className="hero-buttons">
-                    <a href="#contact" className="btn btn-primary">
-                        Coordinar una llamada
-                    </a>
-                    <a href="#method" className="btn btn-outline">
-                        Ver cómo trabajamos →
-                    </a>
-                </div>
-
-                {/* Stats */}
-                <div className="hero-stats">
-                    <div className="hero-stat">
-                        <span className="hero-stat-value">5<span>+</span></span>
-                        <span className="hero-stat-label">Servicios</span>
+                {/* Text content */}
+                <div className="hero-text-col">
+                    {/* Badge */}
+                    <div className="hero-badge">
+                        <span className="hero-badge-dot" />
+                        <span className="mono">Agencia Digital · Uruguay</span>
                     </div>
-                    <div className="hero-stat">
-                        <span className="hero-stat-value">360<span>°</span></span>
-                        <span className="hero-stat-label">Enfoque digital</span>
+
+                    {/* Headline */}
+                    <h1>
+                        Ordenamos tu proyecto digital:{' '}
+                        <span style={{ display: 'inline-grid', verticalAlign: 'bottom', textAlign: 'left' }}>
+                            <span style={{ gridArea: '1/1', visibility: 'hidden', whiteSpace: 'nowrap' }}>
+                                {WORDS.reduce((a, b) => a.length > b.length ? a : b)}
+                            </span>
+                            <span className="hero-gradient-text" style={{ gridArea: '1/1' }}>
+                                {displayText}
+                                {(!isDeleting && charIndex < WORDS[wordIndex].length) || (isDeleting && charIndex > 0) ? (
+                                    <span className="hero-cursor" />
+                                ) : null}
+                            </span>
+                        </span>
+                    </h1>
+
+                    {/* Subtitle */}
+                    <p className="hero-subtitle">
+                        Convertimos proyectos digitales en un sistema conectado: branding, comunicación, contenidos, web y automatización trabajando en conjunto para ganar claridad, coherencia y visibilidad.
+                    </p>
+
+                    {/* CTAs */}
+                    <div className="hero-buttons">
+                        <a href="#contact" className="btn btn-primary">
+                            Coordinar una llamada
+                        </a>
+                        <a href="#method" className="btn btn-outline">
+                            Ver cómo trabajamos →
+                        </a>
                     </div>
-                    <div className="hero-stat">
-                        <span className="hero-stat-value">1<span>x</span></span>
-                        <span className="hero-stat-label">Ecosistema</span>
+
+                    {/* Stats */}
+                    <div className="hero-stats">
+                        <div className="hero-stat">
+                            <span className="hero-stat-value">5<span>+</span></span>
+                            <span className="hero-stat-label">Servicios</span>
+                        </div>
+                        <div className="hero-stat">
+                            <span className="hero-stat-value">360<span>°</span></span>
+                            <span className="hero-stat-label">Enfoque digital</span>
+                        </div>
+                        <div className="hero-stat">
+                            <span className="hero-stat-value">1<span>x</span></span>
+                            <span className="hero-stat-label">Ecosistema</span>
+                        </div>
                     </div>
                 </div>
             </div>
