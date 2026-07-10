@@ -3,7 +3,7 @@
         {
             "src": "/(.*)",
             "status": 503,
-            "dest": "/coming-soon.html"
+            "dest": "/suspended.html"
         }
     ]
 }
