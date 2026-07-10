@@ -1,5 +1,7 @@
 {
-    "buildCommand": "",
+    "framework": null,
+    "buildCommand": "echo skip",
+    "installCommand": "echo skip",
     "outputDirectory": "public",
     "routes": [
         {
