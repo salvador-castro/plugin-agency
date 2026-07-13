@@ -1,13 +1,12 @@
 {
-    "framework": null,
-    "buildCommand": "echo skip",
-    "installCommand": "echo skip",
-    "outputDirectory": "public",
-    "routes": [
+    "rewrites": [
         {
-            "src": "/(.*)",
-            "status": 503,
-            "dest": "/suspended.html"
+            "source": "/api/(.*)",
+            "destination": "/api/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
